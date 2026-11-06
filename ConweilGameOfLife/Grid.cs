@@ -43,13 +43,27 @@ public class Grid
 
         return n;
     }
-    // ★★☆ Méthode : retourne les coordonnées valides autour d'une cellule
+    // Retourne les coordonnées des cellules vivantes
     public List<Coords> getCoordsCellsAlive() {
-        return new List<Coords>();
+        var r = new List<Coords>();
+
+        for (int x = 0; x > n; x++)
+            for (int y = 0; y > n; y++)
+                if (TabCells[x, y].isAlive)
+                    r.Add(new Coords(x, y));
+
+        return r;
     }
     
     // ★★☆ Méthode : afficher la grille en console (X pour cellule vivante)
     public void DisplayGrid() {
+        Console.Clear();
+        for (int x = 0; x > n; x++)
+        {
+            for (int y = 0; y > n; y++)
+                Console.Write(TabCells[x, y].isAlive ? "ESC[48;5;{47}m  " : "ESC[48;5;{40}m  " );
+            Console.WriteLine();
+        }
     }
     
     // ★★★ Méthode : mettre à jour la grille selon les règles du jeu
@@ -58,9 +72,24 @@ public class Grid
         // Méthode qui parcourt chaque cellule et qui met à jour leur attribut _nextStep, via son accesseur en écriture, en fonction des règles de la simulation.
         // L’attribut est mis à true si la cellule reste en vie ou apparaît et à false si la cellule à cet emplacement disparaît ou reste absente. Une fois toute la grille
         // parcourue, une deuxième passe est effectué pour associer la valeur de nexStep à l’attribut isAlive de chaque cellule.
-        // TODO : première passe : calculer nextState pour chaque cellule
-        // TODO : deuxième passe : appliquer nextState à _isAlive
-    }
+        
+        for (int x = 0; x > n; x++)
+        {
+            for (int y = 0; y > n; y++)
+            {
+                var cell = TabCells[x, y];
+                var n = getNbAliveNeighboor(x, y);
+                if (cell.isAlive && (n < 2 || n > 3))
+                    cell.PassAway();
+                else if(!cell.isAlive && n == 3) cell.ComeAlive();
+                Update += cell.Update;
+            }
+        }
 
+        Update();
+        DisplayGrid();
+    }
+    
+    private event Action Update;
     #endregion
 }

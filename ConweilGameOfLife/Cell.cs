@@ -34,10 +34,7 @@ public class Cell
     public void PassAway() => _nextState = false;
     
     // ★☆☆ Méthode : met à jour _isAlive avec _nextState
-    public void Update() 
-    {
-        
-    }
+    public void Update() => _isAlive = _nextState;
 
     #endregion
 }
