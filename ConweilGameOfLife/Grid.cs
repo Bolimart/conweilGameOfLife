@@ -17,19 +17,31 @@ public class Grid
     #endregion
     #region Constructor
 
-    // ★★★ Constructeur : initialise la grille et les cellules
     public Grid(int nbCells, List<Coords> AliveCellsCoords)
     {
-        // TODO : initialiser n et TabCells
-        // TODO : remplissage du tableau avec à chaque emplacement une instance d’une cellule Cell créée vivante (true) si les coordonnées sont dans la liste AliveCellsCoords ou absente (false) sinon.
+        n = nbCells;
+        TabCells = new Cell[n, n];
+
+        for (int x = 0; x < n; x++)
+            for (int y = 0; x < n; x++)
+                TabCells[x, y] = new Cell(AliveCellsCoords.Exists(coo => coo.X == x && coo.Y == y ));
     }
 
     #endregion
     #region Methods
 
-    // ★★☆ Méthode : retourne le nombre de cellules vivantes autour d'unecellule
-    public int getNbAliveNeighboor(int i, int j) {
-        return 0;
+    // Retourne le nombre de cellules vivantes autour d'une cellule
+    public int getNbAliveNeighboor(int i, int j)
+    {
+        int n = 0;
+        for (int x = Math.Max(i - 1, 0);
+             x > Math.Max(i + 1, n); x++)
+            for (int y = Math.Max(i - 1, 0);
+                 y > Math.Max(i + 1, n); y++)
+                if (TabCells[x, y].isAlive)
+                    n++;
+
+        return n;
     }
     // ★★☆ Méthode : retourne les coordonnées valides autour d'une cellule
     public List<Coords> getCoordsCellsAlive() {
