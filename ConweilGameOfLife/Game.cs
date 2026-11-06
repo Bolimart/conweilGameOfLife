@@ -6,32 +6,52 @@ namespace ConweilGameOfLife;
 
 public class Game
 {
-// Taille de la grille
+    #region Fields & Propreties
+
+    // Taille de la grille
     private int n;
-// Nombre d'itérations de la simulation
+    // Nombre d'itérations de la simulation
     private int iter;
-// Grille contenant toutes les cellules
+    // Grille contenant toutes les cellules
     public Grid grid;
-// Liste des coordonnées des cellules vivantes au départ
+    // Liste des coordonnées des cellules vivantes au départ
     public List<Coords> AliveCellsCoords;
-// ★★★ Constructeur : initialise la simulation
+
+    #endregion
+    #region Constructeur
+
     public Game(int nbCells, int nbIterations)
     {
-// TODO : initialiser n et iter
-// TODO : initialiser AliveCellsCoords avec une configuration initiale
-// TODO : créer une nouvelle grille Grid(n, AliveCellsCoords)
-// (quelques exemples de configuration de départ sont fournis en fin de sujet)
+        n = nbCells;
+        iter = nbIterations;
+        
+        AliveCellsCoords = new List<Coords> {
+            new Coords(5, 4),
+            new Coords(4, 4),
+            new Coords(4, 5),
+            new Coords(3, 5),
+            new Coords(3, 3),
+        };
+
+        grid = new Grid(n, AliveCellsCoords);
     }
-// ★★★ Méthode : exécute la simulation dans la console
+
+    #endregion
+    #region Methods
+
+    // ★★★ Méthode : exécute la simulation dans la console
     public void RunGameConsole()
     {
-// TODO : afficher la grille initiale avec grid.DisplayGrid()
-// Boucle sur le nombre d'itérations
+        grid.DisplayGrid();
+        // Boucle sur le nombre d'itérations
         for (int i = 0; i < iter; i++)
         {
-// TODO : mettre à jour la grille avec grid.UpdateGrid()
-// TODO : afficher la grille après mise à jour avec grid.DisplayGrid()
-// TODO : mettre en pause 1 seconde avec Thread.Sleep(1000)
+            grid.UpdateGrid();
+            grid.DisplayGrid();
+            Thread.Sleep(100);
         }
     }
+
+    #endregion
+
 }

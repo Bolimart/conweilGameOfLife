@@ -1,0 +1,14 @@
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/bin/Debug/net10.0/ConweilGameOfLife
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/bin/Debug/net10.0/ConweilGameOfLife.deps.json
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/bin/Debug/net10.0/ConweilGameOfLife.runtimeconfig.json
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/bin/Debug/net10.0/ConweilGameOfLife.dll
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/bin/Debug/net10.0/ConweilGameOfLife.pdb
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/obj/Debug/net10.0/ConweilGameOfLife.GeneratedMSBuildEditorConfig.editorconfig
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/obj/Debug/net10.0/ConweilGameOfLife.AssemblyInfoInputs.cache
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/obj/Debug/net10.0/ConweilGameOfLife.AssemblyInfo.cs
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/obj/Debug/net10.0/ConweilGameOfLife.csproj.CoreCompileInputs.cache
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/obj/Debug/net10.0/ConweilGameOfLife.dll
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/obj/Debug/net10.0/refint/ConweilGameOfLife.dll
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/obj/Debug/net10.0/ConweilGameOfLife.pdb
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/obj/Debug/net10.0/ConweilGameOfLife.genruntimeconfig.cache
+/home/bolimart/RiderProjects/ConweilGameOfLife/ConweilGameOfLife/obj/Debug/net10.0/ref/ConweilGameOfLife.dll

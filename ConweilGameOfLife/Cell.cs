@@ -7,12 +7,10 @@ public class Cell
 
     // Attribut privé représentant l'état actuel de la cellule
     private bool _isAlive;
-    public bool isAlive { get { return _isAlive; } set { _isAlive = value; } }
+    public bool isAlive { get { return _isAlive; } private set { _isAlive = value; } }
     
     // Attribut privé pour stocker l'état futur de la cellule
     private bool _nextState;
-    public bool nextState { get { return _nextState; } set { _nextState = value; }
-    }
 
     #endregion
     #region Constructor
@@ -21,7 +19,7 @@ public class Cell
     public Cell(bool state)
     {
         isAlive = state;
-        Update();
+        _nextState = state;
     }
 
     #endregion

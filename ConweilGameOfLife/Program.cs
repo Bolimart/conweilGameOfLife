@@ -8,7 +8,7 @@ namespace ConweilGameOfLife
     {
         static void Main()
         {
-            Game game = new Game(4, 10);
+            Game game = new Game(100, 500);
             game.RunGameConsole();
         }
     }
