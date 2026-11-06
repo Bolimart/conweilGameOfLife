@@ -70,7 +70,15 @@ public class Grid
         for (int x = 0; x < n; x++)
         {
             for (int y = 0; y < n; y++)
-                Console.Write(TabCells[x, y].isAlive ? "\e[48;2;255;255;255m  " : "\e[48;2;0;0;0m  " ); // 
+            {
+                if (TabCells[x, y].isAlive)
+                    Console.Write("\e[48;2;255;255;255m  ");
+                else
+                {
+                    Console.ResetColor();
+                    Console.Write("  ");
+                }
+            }
             Console.WriteLine();
         }
 
